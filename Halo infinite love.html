@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <button onclick="cambiarColor()">Cambiar Color</button>
+
+    <script>
+        function cambiarColor() {
+            var body = document.getElementsByTagName("body")[0];
+            var color = generarColorAleatorio();
+            body.style.backgroundColor = color;
+        }
+
+        function generarColorAleatorio() {
+            var letras = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var nuevoTexto = "Podria ser un 10 pero salio para consolas de vieja generacion";
+
+        function cambiarTexto() {
+            var elemento = document.getElementById("texto");
+            elemento.textContent = nuevoTexto;
+        }
+
+        function cambiarAtributo() {
+            document.getElementById("imagen").src = "https://pbs.twimg.com/media/FqLFNHKWcAAOQNN.jpg:large";
+        }
+
+        function restaurarImagen() {
+            document.getElementById("imagen").src = "https://i0.wp.com/news.xbox.com/es-latam/wp-content/uploads/sites/4/2-3-47f93accb11d233fffe2.png?resize=1920%2C1080&ssl=1";
+        }
+
+        function ocultarMensaje() {
+            var elementoMensaje = document.getElementById("mensaje");
+            elementoMensaje.style.display = "none";
+        }
+
+        function escribirTexto() {
+            var miDiv = document.getElementById("miDiv");
+            miDiv.innerHTML = "<h1>Este texto no lo escribió Naim Adrian Aranda Pantoja, lo escribió JavaScript</h1>";
+        }
+
+    </script>
+
+    <center>
+        <h1>
+            <strong>
+                Halo infinite para fans
+            </strong>
+        </h1>
+        <h2 id="mensaje">Hola mundo</h2>
+        <button onclick="ocultarMensaje()">Ocultar mensaje</button>
+        <h3>343 Industries</h3>
+
+        <p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <img id="imagen"
+                src="https://i0.wp.com/news.xbox.com/es-latam/wp-content/uploads/sites/4/2-3-47f93accb11d233fffe2.png?resize=1920%2C1080&ssl=1"
+                alt="" height="360 px">
+            <button onclick="cambiarAtributo()">Cambiar imagen</button>
+            <button onclick="restaurarImagen()">Restaurar imagen</button>
+        </p>
+        <h4><strong>Reseña</strong></h4>
+    </center>
+    <p>Apesar de haber tenido un inicio espectacular halo infinite a decaido en cuanto a jugadores debido a la falta de
+        contenido tales como modos de juegos, mapas para el multijugador,vaiedad de armas y su salida tardada del modo
+        forge.
+        Pero apesar de esto halo infinite es un buen juego, su campaña a sido de las mejores que 343 a sacado, otro
+        factor que ha llevado a tener perdida de jugadores es que no existe el modo pantalla divida de forma local,
+        ademas sus cambios de balances para armas y demas modalidades
+        han sido muy criticadas ya que esos cambios solo fueron solicitados por su modo competitivo. En general halo
+        infinite tiene mucho potencial pero a su mala dirreccion no ha conseguido todo su potencial.
+    </p>
+    <center>
+        <h4><strong>Calificacion</strong></h4>
+    </center>
+
+    <p id="texto">En mi opinion halo infinite tiene una calificacion de 8.5 </p>
+    <button onclick="cambiarTexto()">Cambiar texto</button>
+
+    <div id="miDiv"></div>
+    <button onclick="escribirTexto()">Escribir mensaje</button>
+
+</body>
+
+</html>
+
+</html>
