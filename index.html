@@ -54,6 +54,38 @@
             miDiv.innerHTML = "<h1>Este texto no lo escribió Naim Adrian Aranda Pantoja, lo escribió JavaScript</h1>";
         }
 
+        var images = [
+            'https://pbs.twimg.com/media/FqLFNHKWcAAOQNN.jpg:large',
+            'https://i0.wp.com/news.xbox.com/es-latam/wp-content/uploads/sites/4/2-3-47f93accb11d233fffe2.png?resize=1920%2C1080&ssl=1',
+            'https://images.purexbox.com/f9313fe6303ca/343-industries-shares-a-sneak-peek-at-the-art-of-halo-infinite.large.jpg',
+            'https://magazine.artstation.com/wp-content/uploads/2022/01/martin-deschambault-halo-infinite-environment-012-mdeschambault-scaled-e1642548489243.jpg',
+            'https://content.halocdn.com/media/Default/BlogPost/HaloInfinite/dh_artbook_126-1e9e1fb92b94404cbc00fbff5da41e56.jpg'
+        ];
+
+        var index = 0; // para controlar el índice actual de la imagen
+
+        document.getElementById('myImage').src = images[0]; // mostrar la primera imagen al cargar la página
+
+        // función para mostrar la imagen anterior
+        function anterior() {
+            if (index === 0) {
+                index = images.length - 1; // si estamos en la primera imagen, vamos a la última
+            } else {
+                index--; // si no, vamos a la imagen anterior
+            }
+            document.getElementById('myImage').src = images[index]; // actualizamos la imagen
+        }
+
+        // función para mostrar la siguiente imagen
+        function siguiente() {
+            if (index === images.length - 1) {
+                index = 0; // si estamos en la última imagen, vamos a la primera
+            } else {
+                index++; // si no, vamos a la siguiente imagen
+            }
+            document.getElementById('myImage').src = images[index]; // actualizamos la imagen
+        }
+
     </script>
 
     <center>
@@ -81,6 +113,8 @@
                 alt="" height="360 px">
             <button onclick="cambiarAtributo()">Cambiar imagen</button>
             <button onclick="restaurarImagen()">Restaurar imagen</button>
+
+            
         </p>
         <h4><strong>Reseña</strong></h4>
     </center>
@@ -102,6 +136,11 @@
 
     <div id="miDiv"></div>
     <button onclick="escribirTexto()">Escribir mensaje</button>
+    <br>
+    <br>
+    <button onclick="anterior()">Anterior</button>
+            <img id="myImage" src="" alt="Imagen" style="width:580px">
+            <button onclick="siguiente()">Siguiente</button>
 
 </body>
 
